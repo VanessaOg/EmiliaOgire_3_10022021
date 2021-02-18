@@ -1,0 +1,11 @@
+$font-title: "Shrikhand", cursive;
+$font-text: "Roboto";
+body {
+	font-family: $font-text;
+}
+h1 {
+	font-family: $font-title;
+}
+.footer__logo {
+	font-family: $font-title;
+}
