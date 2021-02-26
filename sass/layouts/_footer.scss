@@ -1,0 +1,20 @@
+.footer {
+	width: 100%;
+	background-color: $colour-dark;
+	color: $colour-white;	
+	.footer__logo {
+		padding: 1em;
+		font-weight: normal;
+	}
+}
+
+.footer__list {
+	display: flex;
+	flex-direction: column;
+	padding: 0 1em;
+	color: $colour-white;
+}
+.list__store a {
+	color: $colour-white;
+	padding: 1em;
+}

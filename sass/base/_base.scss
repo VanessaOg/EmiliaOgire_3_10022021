@@ -7,3 +7,179 @@ body {
 	margin: 0;
 	padding: 0;
 }
+a {
+	text-decoration: none;
+	color: $colour-black;
+}
+.location {
+	@extend %flex-center;
+	padding: 1em;
+	background-color: $colour-grey-middle;
+	.location__mapicon {
+		padding-right: 15px;
+	}
+	.location__text {
+		font-family: $font-text;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+}
+.booking__header {
+	background-color: $colour-white-dark;
+	padding-bottom: 55px;
+}
+.booking__info {
+	padding: 2em 1em;
+	.booking__info > h2 {
+		font-weight: bold;
+		padding-bottom: 0.5em;
+	}
+}
+.booking__steps {
+	list-style: none;
+	counter-reset: compteListe;
+	.booking__steps li {
+		display: flex;
+		align-items: center;
+	}
+}
+.booking__step {
+	position: relative;
+	background-color: $colour-white-dark;
+	padding: 1.5em 0 1.5em 1.5em;
+	box-shadow: 5px 5px 5px $colour-white-dark;
+	border-radius: 20px;
+	margin: 20px;
+	height: 5em;
+	align-items: baseline;
+	&:hover {
+		background-color: $colour-primary-light;
+	}
+	.booking__step span {
+		font-weight: 700;
+	}
+}
+.booking__step::before {
+	counter-increment: compteListe;
+	content: counter(compteListe) " ";
+	padding: 0.75rem;
+	border-radius: 100px;
+	height: 1.5rem;
+	width: 1.5rem;
+	background-color: $colour-primary;
+	color: $colour-white;
+	@extend %flex-center;
+	position: absolute;
+	left: -1.5rem;
+	top:1rem;
+}
+
+.step__icon {
+	padding-right: 15px;
+	padding-left: 15px;
+	font-size: 1.2em;
+	padding: 0.4em 1em;
+}
+.store {
+	padding: 2em 1em;
+	background-color: $colour-white-dark;
+	.store__title {
+		margin: 1em 0;
+		font-weight: 700;
+	}
+}
+
+.store__fullcard {
+	width: 335px;
+	height: auto;
+	border-radius: 1rem;
+	position: relative;
+	margin: 1em 0;
+	box-shadow: 5px 5px 5px $colour-white-dark;
+}
+.card__img {
+	object-fit: cover;
+	width: 335px;
+	height: 225px;
+	border-radius: 1rem;
+}
+.fullcard__description {
+	position: absolute;
+	background-color: $colour-white;
+	width: 100%;
+	bottom: 0;
+	height: 80px;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+.description__label {
+	padding: 1em 1em;
+}
+.description__label > h3 {
+	padding-bottom: 0.5em;
+}
+.far.fa-heart {
+	font-size: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 15px;
+}
+.store__tag {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $colour-tertiary;
+	height: 30px;
+	width: 80px;
+	right: 20px;
+	top: 15px;
+	border: $colour-tertiary-dark 1px solid;
+	color: $colour-tertiary-dark;
+}
+$breakpoints: (
+	desktop: 650px,
+);
+@media screen and (min-width: map-get($breakpoints,desktop)) {
+	.main_wrapper {
+		max-width: 100%;
+		width: 100%;
+	}
+	.booking__info > h2 {
+		justify-content: center;
+		margin: 0 auto;
+	}
+	.booking__container {
+		display: flex;
+		justify-content: center;
+	}
+	.booking__steps {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.booking__step {
+		margin-right: 1.5em;
+		padding-right: 1.5em;
+	}
+	.store__fullcard {
+		width: 335px;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.list__store{
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+
+}

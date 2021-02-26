@@ -1,0 +1,12 @@
+.booking__btn {
+	color: $colour-white;
+	padding: 1em 1.5em;
+	border-radius: 50px;
+	background-image: linear-gradient(to bottom, $colour-secondary, $colour-primary);
+	box-shadow: 2em 2em 2em $colour-grey-middle;
+	cursor: pointer;
+	transition: background-color 400ms;
+    &:hover{
+        background-color: lighten($color: $colour-primary, $amount: 20)
+    }
+}

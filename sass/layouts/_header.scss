@@ -1,0 +1,21 @@
+.header__logo {
+	@extend %flex-center;
+	position: relative;
+	padding: 0.3em;
+	font-weight: normal;
+	width: 100%;
+}
+.booking__header {
+	text-align: center;
+	margin: 0 auto;
+	padding: 1em;
+}
+.booking__header > h2 {
+	font-weight: 700;
+	font-size: 24px;
+	padding: 1em 0;
+}
+.booking__header > p {
+	font-size: 1.1em;
+	padding: 0 0 1.5em;
+}
