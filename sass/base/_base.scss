@@ -1,11 +1,13 @@
 body {
 	margin: 0;
 	padding: 0;
+
 }
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
 }
 a {
 	text-decoration: none;
@@ -14,14 +16,17 @@ a {
 .location {
 	@extend %flex-center;
 	padding: 1em;
+
 	background-color: $colour-grey-middle;
 	.location__mapicon {
-		padding-right: 15px;
+		padding-right: 1rem;
 	}
 	.location__text {
-		font-family: $font-text;
+		font-family: $font-text;	
 		font-weight: bold;
-		font-size: 1.2em;
+		font-size:1rem;
+		border: none;
+		background-color: $colour-grey-middle;
 	}
 }
 .booking__header {
@@ -31,7 +36,7 @@ a {
 .booking__info {
 	padding: 2em 1em;
 	.booking__info > h2 {
-		font-weight: bold;
+		font-weight: bolder;
 		padding-bottom: 0.5em;
 	}
 }
@@ -64,19 +69,17 @@ a {
 	content: counter(compteListe) " ";
 	padding: 0.75rem;
 	border-radius: 100px;
-	height: 1.5rem;
-	width: 1.5rem;
+	height: .5rem;
+	width: .5rem;
 	background-color: $colour-primary;
 	color: $colour-white;
 	@extend %flex-center;
 	position: absolute;
-	left: -1.5rem;
-	top:1rem;
+	left: -1rem;
+	top: 1.5rem;
 }
 
 .step__icon {
-	padding-right: 15px;
-	padding-left: 15px;
 	font-size: 1.2em;
 	padding: 0.4em 1em;
 }
@@ -121,11 +124,13 @@ a {
 	padding-bottom: 0.5em;
 }
 .far.fa-heart {
-	font-size: 2em;
+	font-size: 1.5em;
+	font-weight:lighter;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-right: 15px;
+	// padding-right: 15px;
+	cursor: pointer;
 }
 .store__tag {
 	position: absolute;
@@ -145,8 +150,9 @@ $breakpoints: (
 );
 @media screen and (min-width: map-get($breakpoints,desktop)) {
 	.main_wrapper {
-		max-width: 100%;
+		max-width: 1500px;
 		width: 100%;
+
 	}
 	.booking__info > h2 {
 		justify-content: center;
@@ -159,7 +165,7 @@ $breakpoints: (
 	.booking__steps {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 	.booking__step {
 		margin-right: 1.5em;
@@ -176,10 +182,9 @@ $breakpoints: (
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		.list__store{
+		.list__store {
 			display: flex;
 			justify-content: space-around;
 		}
 	}
-
 }

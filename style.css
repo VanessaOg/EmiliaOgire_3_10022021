@@ -1,4 +1,4 @@
-.booking__step::before, .location, .header__logo {
+.card__check, .booking__step::before, .location, .header__logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,10 @@ body {
 
 h1 {
   font-family: "Shrikhand", cursive;
+}
+
+h2 {
+  font-weight: bolder;
 }
 
 .footer__logo {
@@ -76,12 +80,14 @@ a {
   background-color: #eaeaea;
 }
 .location .location__mapicon {
-  padding-right: 15px;
+  padding-right: 1rem;
 }
 .location .location__text {
   font-family: "Roboto";
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1rem;
+  border: none;
+  background-color: #eaeaea;
 }
 
 .booking__header {
@@ -93,7 +99,7 @@ a {
   padding: 2em 1em;
 }
 .booking__info .booking__info > h2 {
-  font-weight: bold;
+  font-weight: bolder;
   padding-bottom: 0.5em;
 }
 
@@ -128,18 +134,16 @@ a {
   content: counter(compteListe) " ";
   padding: 0.75rem;
   border-radius: 100px;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 0.5rem;
+  width: 0.5rem;
   background-color: #9356dc;
   color: #ffffff;
   position: absolute;
-  left: -1.5rem;
-  top: 1rem;
+  left: -1rem;
+  top: 1.5rem;
 }
 
 .step__icon {
-  padding-right: 15px;
-  padding-left: 15px;
   font-size: 1.2em;
   padding: 0.4em 1em;
 }
@@ -190,11 +194,12 @@ a {
 }
 
 .far.fa-heart {
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: lighter;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 15px;
+  cursor: pointer;
 }
 
 .store__tag {
@@ -213,7 +218,7 @@ a {
 
 @media screen and (min-width: 650px) {
   .main_wrapper {
-    max-width: 100%;
+    max-width: 1500px;
     width: 100%;
   }
 
@@ -230,7 +235,7 @@ a {
   .booking__steps {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .booking__step {
@@ -257,16 +262,36 @@ a {
   }
 }
 .booking__btn {
+  border: none;
+  font-size: 1rem;
   color: #ffffff;
-  padding: 1em 1.5em;
+  padding: 1rem 1.5rem;
   border-radius: 50px;
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
-  box-shadow: 2em 2em 2em #eaeaea;
+  box-shadow: 5px 5px 5px #eaeaea;
   cursor: pointer;
-  transition: background-color 400ms;
+  position: relative;
+  z-index: 1;
 }
-.booking__btn:hover {
-  background-color: #c9abee;
+.booking__btn:hover::after {
+  opacity: 1;
+}
+.booking__btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #ff60d3 0%, #782cd3 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+
+.order__btn {
+  padding: 1em 3em;
 }
 
 .footer {
@@ -300,33 +325,79 @@ a {
 
 .menu__main_image > img {
   width: 100%;
+  min-width: 350px;
   height: 260px;
   object-fit: cover;
 }
 
 .menu {
   width: 100%;
+  min-width: 350px;
   background-color: #f6f6f6;
   border-radius: 1.5rem 1.5rem 0 0;
   margin-top: -3em;
   position: relative;
   z-index: 1;
 }
-
 .menu__header {
   display: flex;
+  align-items: center;
   border-radius: 1.5rem 1.5rem 0 0;
   justify-content: space-between;
+  padding: 2rem 2rem 1rem 1rem;
 }
 
-.menu__title {
-  padding: 40px 16px 30px;
+/*-----Button heart-----*/
+.menu__btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: transparent 0px solid;
+  padding: 0;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+.menu__btn:hover::before.btn__noBg {
+  opacity: 1;
+}
+.menu__btn:hover::before.btn__Bg {
+  opacity: 0;
 }
 
-.menu .far.fa-heart {
-  color: #b7b7b7;
-  font-weight: normal;
-  font-size: 1.4em;
+.btn__heart {
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  border: transparent 0px solid;
+  background-color: #f6f6f6;
+}
+
+.btn__noBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.btn__Bg {
+  position: absolute;
+  transition: opacity 500ms;
+  font-size: 2rem;
+  background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn__Bg i::before {
+  display: inline;
+}
+
+/*-----------Sous-menus--------------*/
+.submenu__container {
+  max-width: 100%;
 }
 
 .container__title {
@@ -339,25 +410,77 @@ a {
   border-bottom: solid 2px #99e2d0;
 }
 
+.card__container {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
+  display: flex;
+  max-width: 350px;
+  height: 70px;
   position: relative;
   background-color: #ffffff;
-  margin: 1em;
-  padding: 1em;
+  box-shadow: 0.25rem 0.25 rem 1rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  margin: 1rem;
   border-radius: 1rem;
 }
-
-.card__info {
-  padding-top: 0.5em;
-  color: #848484;
+.card__header {
+  width: 80%;
+  padding: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card__title,
+.card .__info {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 350px;
+}
+.card__price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+  font-weight: 700;
+  width: 20%;
+}
+.card__check {
+  background-color: #99e2d0;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0px;
+  transition: 600ms ease-in-out;
+  border-radius: 0 1rem 1rem 0;
+}
+.card__check .far.fa-check-circle {
+  color: transparent;
+  font-size: 1.5rem;
+  transform: rotate 0turn;
+  transition: transform 700ms ease-in-out;
 }
 
-.card__price {
-  position: absolute;
-  right: 30px;
-  bottom: 0.5em;
-  color: #848484;
-  padding: 0.5em;
+.card:hover .card__check {
+  background-color: #99e2d0;
+  width: 80px;
+}
+
+.card:hover .far.fa-check-circle {
+  transform: rotate(1turn);
+  color: #fff;
+}
+
+.order {
+  text-align: center;
+  padding: 40px 0;
 }
 
 .footer {
@@ -396,10 +519,6 @@ a {
   .menu {
     max-width: 1280px;
     margin: -3em auto 0;
-  }
-
-  .far.fa-heart {
-    padding-right: 40px;
   }
 
   .menu__container {

@@ -26,64 +26,142 @@
 			<section class="menu">
 				<div class="menu__header">
 					<h2 class="menu__title">A la française</h2>
-					<i class="far fa-heart"></i>
+					<button	class="menu__btn">
+						<i class="far fa-heart btn__heart btn__noBg" aria-hidden="true"></i>
+						<i class="fas fa-heart btn__heart btn__Bg" aria-hidden="true"></i>
+					</button>
 				</div>
 				<div class="menu__container">
-					<div class="starters">
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Entrées</span></h3>
-						<div class="card">
-							<h4 class="card__title">Tartare de poulpe acidulé</h4>
-							<p class="card__info">Aux zestes d'orange</p>
-							<p class="card__price">25€</p>
+						<div class="card__container">
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Tartare de poulpe acidulé</h4>
+									<p class="card__info">Aux zestes d'orange</p>
+								</div>
+								<div class="card__price">25€</div>
+
+								<div class="card__check">
+									<span><i class="far fa-check-circle"></i>
+									</span>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Velouté de légumes d'antan</h4>
+									<p class="card__info">Carotte, panais, topinambour</p>
+								</div>
+								<div class="card__price">35€</div>
+
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Soupe à l'oignon</h4>
+									<p class="card__info">Revisitée</p>
+								</div>
+								<div class="card__price">20€</div>
+
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="card">
-							<h4 class="card__title">Velouté de légumes d'antan</h4>
-							<p class="card__info">Carotte, panais, topinambour</p>
-							<p class="card__price">35€</p>
-						</div>
-						<div class="card">
-							<h4 class="card__title">Soupe à l'oignon</h4>
-							<p class="card__info">Revisitée</p>
-							<p class="card__price">20€</p>
-						</div>
-					</div>
-					<div class="main-couses">
+					</section>
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Plats</span></h3>
-						<div class="card">
-							<h4 class="card__title">Coquilles Saint-Jacques</h4>
-							<p class="card__info">Accompagnées d'une purée de panais</p>
-							<p class="card__price">40€</p>
+						<div class="card__container">
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Coquilles Saint-Jacques</h4>
+									<p class="card__info">Accompagnées d'une purée de panais</p>
+								</div>
+								<div class="card__price">40€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Magret de canard</h4>
+									<p class="card__info">Et parmentier de pommes de terre</p>
+								</div>
+								<div class="card__price">35€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Pigeonneau d’Ille-et-Vilaine</h4>
+									<p class="card__info">Sur son lit de gnocchis aux légumes</p>
+								</div>
+								<div class="card__price">44€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="card">
-							<h4 class="card__title">Magret de canard</h4>
-							<p class="card__info">Et parmentier de pommes de terre</p>
-							<p class="card__price">35€</p>
-						</div>
-						<div class="card">
-							<h4 class="card__title">Pigeonneau d’Ille-et-Vilaine</h4>
-							<p class="card__info">Sur son lit de gnocchis aux légumes</p>
-							<p class="card__price">44€</p>
-						</div>
-					</div>
-					<div class="dessert">
+					</section>
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Desserts</span></h3>
 						<div class="card">
-							<h4 class="card__title">Pétales de violettes glacés</h4>
-							<p class="card__info">Et purée de noisettes</p>
-							<p class="card__price">18€</p>
+							<div class="card__header">
+								<h4 class="card__title">Pétales de violettes glacés</h4>
+								<p class="card__info">Et purée de noisettes</p>
+							</div>
+							<div class="card__price">18€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
 						<div class="card">
-							<h4 class="card__title">Fondant au chocolat</h4>
-							<p class="card__info">Revisité</p>
-							<p class="card__price">22€</p>
+							<div class="card__header">
+								<h4 class="card__title">Fondant au chocolat</h4>
+
+								<p class="card__info">Revisité</p>
+							</div>
+							<div class="card__price">22€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
 						<div class="card">
-							<h4 class="card__title">Millefeuille croustillant</h4>
-							<p class="card__info">Myrtilles et pâte d’amande</p>
-							<p class="card__price">23€</p>
+							<div class="card__header">
+								<h4 class="card__title">Millefeuille croustillant</h4>
+
+								<p class="card__info">Myrtilles et pâte d’amande</p>
+							</div>
+							<div class="card__price">23€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
-					</div>
-					<a href="#" class="booking__btn">Commander</a>
+					</section>
+				</div>
+				<div class="order">
+					<a href="#" class="booking__btn order__btn">Commander</a>
 				</div>
 			</section>
 		</div>
@@ -98,7 +176,7 @@
 						><p><i class="fas fa-hands-helping"></i><span>Devenir partenaire</span></p></a
 					>
 					<a href="#"><p>Mentions légales</p></a>
-					<a href="#"><p>Contact</p></a>
+					<a href="mailto:vanesogire@gmail.com"><p>Contact</p></a>
 				</div>
 			</div>
 		</footer>

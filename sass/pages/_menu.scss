@@ -7,31 +7,84 @@
 //layout
 .menu__main_image > img {
 	width: 100%;
+	min-width: 350px;
 	height: 260px;
 	object-fit: cover;
 }
 
 .menu {
 	width: 100%;
+	min-width: 350px;
 	background-color: $colour-white-dark;
 	border-radius: 1.5rem 1.5rem 0 0;
 	margin-top: -3em;
 	position: relative;
 	z-index: 1;
-}
-.menu__header {
-	display: flex;
-	border-radius: 1.5rem 1.5rem 0 0;
-	justify-content: space-between;
-}
-.menu__title {
-	padding: 40px 16px 30px;
+	&__header {
+		display: flex;
+		align-items: center;
+		border-radius: 1.5rem 1.5rem 0 0;
+		justify-content: space-between;
+		padding: 2rem 2rem 1rem 1rem;
+	}
 }
 
-.menu .far.fa-heart {
-	color: darken($colour-grey-middle, 20);
-	font-weight: normal;
-	font-size: 1.4em;
+/*-----Button heart-----*/
+//--------------à finir--------------*/
+.menu__btn {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:transparent 0px solid;
+	padding: 0;
+	height: 2rem;
+	width: 2rem;
+	cursor: pointer;
+	&:hover::before{
+		&.btn__noBg{
+			opacity: 1;
+		}
+		&.btn__Bg{
+			opacity:0;
+		}
+	}
+
+}
+.btn__heart {
+	height: 2rem;
+	width: 2rem;
+	font-size: 2rem;
+	border:transparent 0px solid;
+	background-color: $colour-white-dark;
+}
+.btn__noBg{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	top:0;
+	left:0;
+}
+.btn__Bg {
+	position: absolute;
+	transition: opacity 500ms;
+	font-size: 2rem;	
+	// background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+	// background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+	background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+	-webkit-background-clip: text;
+	// -moz-background-clip: text;
+	// background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.btn__Bg i::before {
+	display: inline;
+}
+
+/*-----------Sous-menus--------------*/
+.submenu__container {
+	max-width: 100%;
 }
 .container__title {
 	padding: 10px 1em;
@@ -41,24 +94,78 @@
 .container__title > span {
 	border-bottom: solid 2px $colour-tertiary;
 }
+
+.card__container {
+	display: flex;
+	flex-direction: column;
+}
 .card {
+	display: flex;
+	max-width: 350px;
+	height: 70px;
 	position: relative;
 	background-color: $colour-white;
-	margin: 1em;
-	padding: 1em;
+	box-shadow: 0.25rem 0.25 rem 1rem rgb(0 0 0 /10%);
+	position: relative;
+	cursor: pointer;
+	margin: 1rem;
 	border-radius: 1rem;
+
+	&__header {
+		width: 80%;
+		padding: 1em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	&__title,
+	.__info {
+		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 350px;
+	}
+	&__price {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		padding: 1rem;
+		font-weight: 700;
+		width: 20%;
+	}
+	&__check {
+		background-color: $colour-tertiary;
+		height: 70px;
+		display: flex;
+		position: absolute;
+		top: 0;
+		right: 0;
+		@extend %flex-center;
+		width: 0px;
+		transition: 600ms ease-in-out;
+		border-radius: 0 1rem 1rem 0;
+		& .far.fa-check-circle {
+			color: transparent;
+			font-size: 1.5rem;
+			transform: rotate (0turn);
+			transition: transform 700ms ease-in-out;
+		}
+	}
+}
+.card:hover .card__check {
+	background-color: $colour-tertiary;
+	width: 80px;
+}
+.card:hover .far.fa-check-circle {
+	transform: rotate(1turn);
+	color: #fff;
 }
 
-.card__info {
-	padding-top: 0.5em;
-	color: darken($colour-grey-middle, 40);
-}
-.card__price {
-	position: absolute;
-	right: 30px;
-	bottom: 0.5em;
-	color: darken($colour-grey-middle, 40);
-	padding: 0.5em;
+.order {
+	//changer les dimensions du bouton commande
+	text-align: center;
+	padding: 40px 0;
 }
 .footer {
 	width: 100%;
@@ -85,7 +192,7 @@ $breakpoints: (
 	desktop: 768px,
 );
 @media screen and (min-width: map-get($breakpoints,desktop)) {
-	.main_wrapper{
+	.main_wrapper {
 		padding-bottom: 10em;
 	}
 	.menu__main_image > img {
@@ -96,9 +203,6 @@ $breakpoints: (
 	.menu {
 		max-width: 1280px;
 		margin: -3em auto 0;
-	}
-	.far.fa-heart {
-		padding-right: 40px;
 	}
 	.menu__container {
 		display: flex;

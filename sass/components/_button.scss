@@ -1,12 +1,38 @@
 .booking__btn {
+	border: none;
+	font-size: 1rem;
 	color: $colour-white;
-	padding: 1em 1.5em;
+	padding: 1rem 1.5rem;
 	border-radius: 50px;
-	background-image: linear-gradient(to bottom, $colour-secondary, $colour-primary);
-	box-shadow: 2em 2em 2em $colour-grey-middle;
+	background-image: $clr-btn;
+	box-shadow: 5px 5px 5px $colour-grey-middle;
 	cursor: pointer;
-	transition: background-color 400ms;
-    &:hover{
-        background-color: lighten($color: $colour-primary, $amount: 20)
-    }
+	position: relative;
+	z-index: 1;
+	&:hover {
+		&::after {
+			opacity: 1;
+		}
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		border-radius: 50px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image:linear-gradient(
+			to top,
+			darken($colour-secondary, 5) 0%,
+			darken($colour-primary, 10) 100%
+		);
+		opacity: 0;
+		z-index: -1;
+		transition: opacity 250ms;
+	}
+}
+//problème sur le hover à régler
+.order__btn {
+	padding: 1em 3em;
 }
