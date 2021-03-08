@@ -1,15 +1,17 @@
 .booking__btn {
-	border: none;
-	font-size: 1rem;
+	border: 0;
+	font-size: 1.1rem;
 	color: $colour-white;
 	padding: 1rem 1.5rem;
 	border-radius: 50px;
 	background-image: $clr-btn;
-	box-shadow: 5px 5px 5px $colour-grey-middle;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
 	position: relative;
 	z-index: 1;
+	transition: 250ms;
 	&:hover {
+		box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.5);
 		&::after {
 			opacity: 1;
 		}
@@ -17,22 +19,74 @@
 	&::after {
 		content: "";
 		position: absolute;
-		border-radius: 50px;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-image:linear-gradient(
-			to top,
-			darken($colour-secondary, 5) 0%,
-			darken($colour-primary, 10) 100%
-		);
+		border-radius: 50px;
+		background-color: $colour-secondary;
 		opacity: 0;
 		z-index: -1;
 		transition: opacity 250ms;
 	}
 }
-//problème sur le hover à régler
-.order__btn {
-	padding: 1em 3em;
+
+/*-----Button heart-----*/
+//--------------à finir--------------*/
+.heart__ctn {
+	position: relative;
+	height: 2rem;
+	width: 2rem;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: transparent 0px solid;
+	transition: 250ms;
 }
+.fullcard__description > .heart__ctn {
+	background-color: $colour-white;
+}
+.menu__header > .heart__ctn {
+	background-color: $colour-white-dark;
+}
+.btn__noBg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+	z-index: 1;
+	&:hover {
+		opacity: 0;
+		z-index: -5;
+		&::btn__bg {
+			opacity: 1;
+			z-index: 1;
+		}
+	}
+}
+.btn__Bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0;
+	background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+	background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+	background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: opacity 250ms;
+}
+
+

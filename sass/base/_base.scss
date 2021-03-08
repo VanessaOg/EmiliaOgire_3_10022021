@@ -112,14 +112,13 @@ a {
 	width: 100%;
 	bottom: 0;
 	height: 80px;
+	padding: 1rem;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	display: flex;
 	justify-content: space-between;
 }
-.description__label {
-	padding: 1em 1em;
-}
+
 .description__label > h3 {
 	padding-bottom: 0.5em;
 }

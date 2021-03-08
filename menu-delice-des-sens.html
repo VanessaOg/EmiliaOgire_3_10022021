@@ -26,68 +26,143 @@
 			<section class="menu">
 				<div class="menu__header">
 					<h2 class="menu__title">Le délice des sens</h2>
-					<i class="far fa-heart"></i>
+					<button class="heart__ctn">
+						<i class="far fa-heart btn__heart btn__noBg" aria-hidden="true"></i>
+						<i class="fas fa-heart btn__heart btn__Bg" aria-hidden="true"></i>
+					</button>
 				</div>
 				<div class="menu__container">
-					<div class="starters">
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Entrées</span></h3>
-						<div class="card">
-							<h4 class="card__title">Tartare de thon</h4>
-							<p class="card__info">Assaisonné au yuzu</p>
-							<p class="card__price">25€</p>
+						<div class="card__container">
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Tartare de thon</h4>
+									<p class="card__info">Assaisonné au yuzu</p>
+								</div>
+								<div class="card__price">25€</div>
+
+								<div class="card__check">
+									<span><i class="far fa-check-circle"></i> </span>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Bouchée de homard croustillant</h4>
+									<p class="card__info">Et sa farandole de petits légumesr</p>
+								</div>
+								<div class="card__price">35€</div>
+
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Velouté de cèpes </h4>
+									<p class="card__info">Aux truffes</p>
+								</div>
+								<div class="card__price">20€</div>
+
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="card">
-							<h4 class="card__title">Bouchée de homard croustillant</h4>
-							<p class="card__info">Et sa farandole de petits légumes</p>
-							<p class="card__price">35€</p>
-						</div>
-						<div class="card">
-							<h4 class="card__title">Velouté de cèpes</h4>
-							<p class="card__info">Aux truffes</p>
-							<p class="card__price">20€</p>
-						</div>
-					</div>
-					<div class="main-couses">
+					</section>
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Plats</span></h3>
-						<div class="card">
-							<h4 class="card__title">Poulet rôti aux herbes de Provence</h4>
-							<p class="card__info">Et sa crème de truffe</p>
-							<p class="card__price">40€</p>
+						<div class="card__container">
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Poulet rôti aux herbes de Provence </h4>
+									<p class="card__info">Et sa crème de truffe</p>
+								</div>
+								<div class="card__price">40€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Langouste rôtie </h4>
+									<p class="card__info">Et ses légumes de saison</p>
+								</div>
+								<div class="card__price">35€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header">
+									<h4 class="card__title">Côte de boeuf Angus/h4>
+									<p class="card__info">Et sa purée de panais</p>
+								</div>
+								<div class="card__price">44€</div>
+								<div class="card__check">
+									<div class="check__wrapicon">
+										<i class="far fa-check-circle"></i>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="card">
-							<h4 class="card__title">Langouste rôtie</h4>
-							<p class="card__info">Et ses légumes de saison</p>
-							<p class="card__price">35€</p>
-						</div>
-						<div class="card">
-							<h4 class="card__title">Côte de boeuf Angus</h4>
-							<p class="card__info">Et sa purée de panais</p>
-							<p class="card__price">44€</p>
-						</div>
-					</div>
-					<div class="dessert">
+					</section>
+					<section class="submenu__container">
 						<h3 class="container__title"><span> Desserts</span></h3>
 						<div class="card">
-							<h4 class="card__title">Farandole de desserts</h4>
-							<p class="card__info">Du chef</p>
-							<p class="card__price">18€</p>
+							<div class="card__header">
+								<h4 class="card__title">Farandole de desserts</h4>
+								<p class="card__info">Du chef</p>
+							</div>
+							<div class="card__price">18€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
 						<div class="card">
-							<h4 class="card__title">Crème brulée</h4>
-							<p class="card__info">Revisitée</p>
-							<p class="card__price">22€</p>
+							<div class="card__header">
+								<h4 class="card__title">Crème brulée</h4>
+								<p class="card__info">Revisité</p>
+							</div>
+							<div class="card__price">22€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
 						<div class="card">
-							<h4 class="card__title">Tiramisu</h4>
-							<p class="card__info">À la noisette</p>
-							<p class="card__price">23€</p>
+							<div class="card__header">
+								<h4 class="card__title">Tiramisu</h4>
+
+								<p class="card__info">À la noisette</p>
+							</div>
+							<div class="card__price">23€</div>
+							<div class="card__check">
+								<div class="check__wrapicon">
+									<i class="far fa-check-circle"></i>
+								</div>
+							</div>
 						</div>
-					</div>
+					</section>
 				</div>
 				<div class="order">
 					<a href="#" class="booking__btn order__btn">Commander</a>
 				</div>
 			</section>
+
 		</div>
 		<footer class="footer">
 			<h3 class="footer__logo">ohmyfood</h3>
