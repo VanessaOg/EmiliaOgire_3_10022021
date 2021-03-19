@@ -135,6 +135,7 @@ a {
 }
 .booking__steps .booking__steps li {
   display: flex;
+  font-weight: bolder;
   align-items: center;
 }
 
@@ -150,6 +151,7 @@ a {
 }
 .booking__step:hover {
   background-color: #f5edff;
+  color: #9356dc;
 }
 .booking__step .booking__step span {
   font-weight: 700;
@@ -333,7 +335,7 @@ h2 {
   bottom: 0;
   left: 0;
   border-radius: 50px;
-  background-color: #ff79da;
+  background: linear-gradient(to bottom, lighten #ff79da, lighten #9356dc);
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
@@ -378,9 +380,9 @@ h2 {
 
 .btn__Bg {
   position: absolute;
-  background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-  background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-  background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+  background: -moz-linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
+  background: -webkit-linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;

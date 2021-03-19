@@ -47,6 +47,7 @@ a {
 	counter-reset: compteListe;
 	.booking__steps li {
 		display: flex;
+		font-weight: bolder;
 		align-items: center;
 	}
 }
@@ -61,6 +62,7 @@ a {
 	align-items: baseline;
 	&:hover {
 		background-color: $colour-primary-light;
+		color: $colour-primary;
 	}
 	.booking__step span {
 		font-weight: 700;

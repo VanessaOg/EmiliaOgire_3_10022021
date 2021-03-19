@@ -26,7 +26,7 @@
 		bottom: 0;
 		left: 0;
 		border-radius: 50px;
-		background-color: $colour-secondary;
+		background: $clr-btn--hov;
 		opacity: 0;
 		z-index: -1;
 		transition: opacity 250ms ;
@@ -68,9 +68,9 @@
 }
 .btn__Bg {
 	position: absolute;
-	background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-	background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-	background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+	background: -moz-linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
+	background: -webkit-linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
+	background: linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	background-clip: text;
