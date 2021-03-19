@@ -1,34 +1,36 @@
 body {
 	margin: 0;
 	padding: 0;
-
 }
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-
 }
+
 a {
 	text-decoration: none;
 	color: $colour-black;
 }
+
 .location {
 	@extend %flex-center;
-	padding: 1em;
+	padding: 1rem;
 
 	background-color: $colour-grey-middle;
 	.location__mapicon {
 		padding-right: 1rem;
 	}
 	.location__text {
-		font-family: $font-text;	
+		font-family: $font-text;
 		font-weight: bold;
-		font-size:1rem;
+		font-size: 1rem;
 		border: none;
 		background-color: $colour-grey-middle;
 	}
 }
+
 .booking__header {
 	background-color: $colour-white-dark;
 	padding-bottom: 55px;
@@ -69,8 +71,8 @@ a {
 	content: counter(compteListe) " ";
 	padding: 0.75rem;
 	border-radius: 100px;
-	height: .5rem;
-	width: .5rem;
+	height: 0.5rem;
+	width: 0.5rem;
 	background-color: $colour-primary;
 	color: $colour-white;
 	@extend %flex-center;
@@ -124,7 +126,7 @@ a {
 }
 .far.fa-heart {
 	font-size: 1.5em;
-	font-weight:lighter;
+	font-weight: lighter;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -151,7 +153,6 @@ $breakpoints: (
 	.main_wrapper {
 		max-width: 1500px;
 		width: 100%;
-
 	}
 	.booking__info > h2 {
 		justify-content: center;

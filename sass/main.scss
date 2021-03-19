@@ -2,10 +2,11 @@
 @import "./utils/_extensions";
 @import "./utils/_mixins";
 @import "./base/_typography";
-@import "./layouts/container";
-@import "./layouts/header";
-@import "./base/_base";
-@import "./components/_button";
+@import "./layouts/_container";
+@import "./layouts/_header";
 @import "./layouts/_footer";
+@import "./base/_base";
+@import "./base/_typography";
+@import "./components/_button";
 @import "./pages/_menu";
-//@import "./utils/_animations"
+@import "./utils/_animations";

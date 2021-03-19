@@ -3,22 +3,33 @@
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-	position: relative;
-	height: 500px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	animation: loaderDisappear 2000ms 200ms both;
+}
+/*Keygrames pour faire disparaître le loader */
+@keyframes loaderDisappear {
+	100% {
+		opacity: 0;
+		z-index: -5;
+	}
 }
 .loader__item {
 	width: 50px;
 	height: 50px;
-    margin-right: 2rem;
+	margin: 2rem;
+	animation: spin 2s 500ms linear infinite both;
 }
 
 .item1 {
 	position: relative;
 	border-radius: 50px;
 	border: 6px solid transparent;
-    border-top-color: #9356DC;
-    border-bottom-color: #9356DC;
-    animation: spin 1s linear infinite;
+	border-top-color: #9356dc;
+	border-bottom-color: #9356dc;
 }
 .item1::after {
 	content: "";
@@ -28,23 +39,20 @@
 	right: 5px;
 	bottom: 5px;
 	border-radius: 50px;
-    opacity: 0.6;
+	opacity: 0.6;
 	border: 6px solid transparent;
-	border-top-color: #9356DC;
-    border-bottom-color: #9356DC;
-	animation: spin 1s linear infinite;
+	border-top-color: #9356dc;
+	border-bottom-color: #9356dc;
 }
 
 .item2 {
 	position: relative;
 	border-radius: 50px;
 	border: 6px solid rgba(250, 250, 250, 0.8);
-    border: 6px solid transparent;
-	border-top-color:#99E2D0;
-    border-bottom-color: #99E2D0;
-    animation: spin 1s linear infinite;
+	border: 6px solid transparent;
+	border-top-color: #99e2d0;
+	border-bottom-color: #99e2d0;
 }
-
 
 .item2::after {
 	content: "";
@@ -54,21 +62,19 @@
 	right: 5px;
 	bottom: 5px;
 	border-radius: 50px;
-    opacity: 0.6;
+	opacity: 0.6;
 	border: 6px solid transparent;
-	border-top-color:#99E2D0;
-    border-bottom-color: #99E2D0;
-	animation: spin 1s linear infinite;
+	border-top-color: #99e2d0;
+	border-bottom-color: #99e2d0;
 }
 .item3 {
 	position: relative;
 	border-radius: 50px;
 	border: 6px solid rgba(250, 250, 250, 0.8);
-    border: 6px solid transparent;
+	border: 6px solid transparent;
 	border-top-color: #e72c83;
-    border-bottom-color: #e72c83;
-    animation: spin 1s linear infinite;}
-
+	border-bottom-color: #e72c83;
+}
 
 .item3::after {
 	content: "";
@@ -78,14 +84,10 @@
 	right: 5px;
 	bottom: 5px;
 	border-radius: 50px;
-    opacity: 0.6;
+	opacity: 0.6;
 	border: 6px solid transparent;
 	border-top-color: #e72c83;
-    border-bottom-color: #e72c83;
-	animation: spin 1s linear infinite;
-}
-.section__loader{
-	animation: spin 3000ms;
+	border-bottom-color: #e72c83;
 }
 @-webkit-keyframes spin {
 	0% {
@@ -98,22 +100,47 @@
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
-		opacity: .1;	
 	}
-	50%{
-		opacity: .1;
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/*Keyframes pour ramener la page principale*/
+@keyframes main {
+	0% {
+		transform: translateX(-9999px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* Keyframes pour apparition des cards dans les menus*/
+@keyframes cardAppear {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(-5px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+/*keyframe pour la choche dans le menu*/
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
 	}
 	100% {
 		transform: rotate(360deg);
-		
-	}
-}
-@keyframes cardAppear{
-	0%{
-		transform:scale(0);
-	}
-	
-	100%{
-		transform: scale(1);
 	}
 }
