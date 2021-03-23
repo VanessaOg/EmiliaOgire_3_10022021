@@ -1,7 +1,11 @@
+html,body{
+	height: 100vh;
+	position: relative;
+}
 .main_wrapper {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1440px;
+	max-width: 1280px;
 	min-width: 320px;
 	animation: main 1000ms 1500ms both;
 }

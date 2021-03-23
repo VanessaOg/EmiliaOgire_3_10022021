@@ -14,15 +14,16 @@ a {
 	color: $colour-black;
 }
 
+//location search
 .location {
 	@extend %flex-center;
 	padding: 1rem;
-
+	border-top: darken($colour-grey-middle, 5%) 1px solid;
 	background-color: $colour-grey-middle;
-	.location__mapicon {
+	&__mapicon {
 		padding-right: 1rem;
 	}
-	.location__text {
+	&__text {
 		font-family: $font-text;
 		font-weight: bold;
 		font-size: 1rem;
@@ -30,57 +31,60 @@ a {
 		background-color: $colour-grey-middle;
 	}
 }
-
-.booking__header {
-	background-color: $colour-white-dark;
-	padding-bottom: 55px;
-}
-.booking__info {
-	padding: 2em 1em;
-	.booking__info > h2 {
-		font-weight: bolder;
-		padding-bottom: 0.5em;
+//Booking & Tuto
+.booking {
+	&__header {
+		background-color: $colour-white-dark;
+		padding-bottom: 55px;
 	}
-}
-.booking__steps {
-	list-style: none;
-	counter-reset: compteListe;
-	.booking__steps li {
-		display: flex;
-		font-weight: bolder;
-		align-items: center;
+	&__info {
+		padding: 2em 1em;
+		.booking__info > h2 {
+			font-weight: bolder;
+			padding-bottom: 0.5em;
+		}
 	}
-}
-.booking__step {
-	position: relative;
-	background-color: $colour-white-dark;
-	padding: 1.5em 0 1.5em 1.5em;
-	box-shadow: 5px 5px 5px $colour-white-dark;
-	border-radius: 20px;
-	margin: 20px;
-	height: 5em;
-	align-items: baseline;
-	&:hover {
-		background-color: $colour-primary-light;
-		color: $colour-primary;
+	&__steps {
+		list-style: none;
+		counter-reset: compteListe;
+		& > li {
+			display: flex;
+			align-items: center;
+		}
 	}
-	.booking__step span {
-		font-weight: 700;
+	&__step {
+		position: relative;
+		background-color: $colour-white-dark;
+		padding: 1rem;
+		box-shadow: 5px 5px 5px darken($colour-white-dark, 5%);
+		border-radius: 1.5rem;
+		margin: 20px;
+		height: 5em;
+		align-items: baseline;
+		&:hover {
+			background-color: $colour-primary-light;
+		}
+		&:hover .fas {
+			color: $colour-primary;
+		}
+		& > span {
+			font-weight: 700;
+		}
+		&::before {
+			counter-increment: compteListe;
+			content: counter(compteListe) " ";
+			padding: 0.75rem;
+			border-radius: 100px;
+			height: 0.4rem;
+			width: 0.4rem;
+			background-color: $colour-primary;
+			color: $colour-white;
+			@extend %flex-center;
+			position: absolute;
+			left: -1rem;
+			top: 1.5rem;
+		}
 	}
-}
-.booking__step::before {
-	counter-increment: compteListe;
-	content: counter(compteListe) " ";
-	padding: 0.75rem;
-	border-radius: 100px;
-	height: 0.5rem;
-	width: 0.5rem;
-	background-color: $colour-primary;
-	color: $colour-white;
-	@extend %flex-center;
-	position: absolute;
-	left: -1rem;
-	top: 1.5rem;
 }
 
 .step__icon {
@@ -90,23 +94,37 @@ a {
 .store {
 	padding: 2em 1em;
 	background-color: $colour-white-dark;
-	.store__title {
+	&__title {
 		margin: 1em 0;
 		font-weight: 700;
 	}
+	&__fullcard {
+		max-width: 335px;
+		height: auto;
+		border-radius: 1rem;
+		position: relative;
+		margin: 1em;
+		box-shadow: 5px 5px 5px $colour-white-dark;
+	}
+	&__tag {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $colour-tertiary;
+		height: 30px;
+		width: 80px;
+		right: 20px;
+		top: 15px;
+		border: $colour-tertiary-dark 1px solid;
+		color: $colour-tertiary-dark;
+	}
 }
 
-.store__fullcard {
-	width: 335px;
-	height: auto;
-	border-radius: 1rem;
-	position: relative;
-	margin: 1em 0;
-	box-shadow: 5px 5px 5px $colour-white-dark;
-}
 .card__img {
 	object-fit: cover;
 	width: 335px;
+	width: calc(100%-40px);
 	height: 225px;
 	border-radius: 1rem;
 }
@@ -135,19 +153,8 @@ a {
 	// padding-right: 15px;
 	cursor: pointer;
 }
-.store__tag {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: $colour-tertiary;
-	height: 30px;
-	width: 80px;
-	right: 20px;
-	top: 15px;
-	border: $colour-tertiary-dark 1px solid;
-	color: $colour-tertiary-dark;
-}
+
+//Breakpoints
 $breakpoints: (
 	desktop: 650px,
 );
@@ -156,22 +163,24 @@ $breakpoints: (
 		max-width: 1500px;
 		width: 100%;
 	}
-	.booking__info > h2 {
-		justify-content: center;
-		margin: 0 auto;
-	}
-	.booking__container {
-		display: flex;
-		justify-content: center;
-	}
-	.booking__steps {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.booking__step {
-		margin-right: 1.5em;
-		padding-right: 1.5em;
+	.booking {
+		&__info > h2 {
+			justify-content: center;
+			margin: 0 auto;
+		}
+		&__container {
+			display: flex;
+			justify-content: center;
+		}
+		&__steps {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		&__step {
+			margin-right: 1.5em;
+			padding-right: 1.5em;
+		}
 	}
 	.store__fullcard {
 		width: 335px;

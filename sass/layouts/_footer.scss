@@ -1,19 +1,22 @@
 .footer {
+	height:260px;
 	width: 100%;
+	margin: 0;
+	padding: 1rem;
 	background-color: $colour-dark;
 	color: $colour-white;	
-	.footer__logo {
+	&__logo {
 		padding: 1em;
 		font-weight: normal;
 	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		padding: 0 1em;
+		color: $colour-white;
+	}
 }
 
-.footer__list {
-	display: flex;
-	flex-direction: column;
-	padding: 0 1em;
-	color: $colour-white;
-}
 .list__store a {
 	color: $colour-white;
 	padding: 1em;
