@@ -13,4 +13,4 @@ $colour-black:#000000;
 
 //btn//
 $clr-btn:linear-gradient(to bottom, $colour-secondary, $colour-primary);
-$clr-btn--hov:linear-gradient(to bottom,lighten ($colour-secondary),lighten ($colour-primary));
+$clr-btn--hov:linear-gradient(to bottom,lighten ($colour-secondary,50%),lighten ($colour-primary,50%));
