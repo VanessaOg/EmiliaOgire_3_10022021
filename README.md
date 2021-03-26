@@ -28,7 +28,8 @@ Mise en page libre sur tablette et desktop
 Contenu des pages:
 Page d'accueil:
 
-- Affichage de la localisation des restaurants. Possibilité de choisir sa localisation pour trouver des restaurants proches.
+- Affichage de la localisation des restaurants. 
+Possibilité de choisir sa localisation pour trouver des restaurants proches.
 - Une courte présentation de l'entreprise
 - Dans la section contenant 4 menus sous forme de carte, au clic sur la carte, l'urilisateur est redirigé vers la page du menu
 

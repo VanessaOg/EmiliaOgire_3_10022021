@@ -26,6 +26,7 @@
 		left: 0;
 		border-radius: 50px;
 		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+		mix-blend-mode: lighten;
 		background-image: $clr-btn--hov;
 		opacity: 0;
 		z-index: -1;
@@ -64,7 +65,7 @@
 	font-size: 2rem;
 }
 .btn__noBg {
-	transition: 800ms;
+	transition: 900ms;
 }
 .btn__Bg {
 	position: absolute;
@@ -75,13 +76,15 @@
 	-moz-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	transition: 800ms;
+	transition:  all 900ms ease-in;
 	opacity: 0;
-	transform-origin: 0%;
+	width: 0;
 }
 .heart__ctn:hover .btn__Bg {
 	opacity: 1;
+	width: 2rem;
 }
-.heart__ctn:active .btn__noBg {
+.heart__ctn:hover .btn__noBg {
 	opacity: 0;
 }
+
