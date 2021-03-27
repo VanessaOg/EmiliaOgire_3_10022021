@@ -3,8 +3,8 @@
 	width: 100%;
 	margin: 0;
 	padding: 1rem;
-	background-color: $colour-dark;
-	color: $colour-white;	
+	background-color: $color-dark;
+	color: $color-white;	
 	&__logo {
 		padding: 1em;
 		font-weight: normal;
@@ -13,11 +13,11 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0 1em;
-		color: $colour-white;
+		color: $color-white;
 	}
 }
 
 .list__store a {
-	color: $colour-white;
+	color: $color-white;
 	padding: 1em;
 }

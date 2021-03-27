@@ -27,7 +27,7 @@
 }
 .menu {
 	max-width: 1280px;
-	background-color: $colour-white-dark;
+	background-color: $color-white-dark;
 	border-radius: 1.5rem 1.5rem 0 0;
 	margin: -3em auto 0;
 	position: relative;
@@ -55,7 +55,7 @@
 .submenu__container {
 	max-width: 100%;
 	overflow: hidden;
-	animation: cardAppear 2s;
+	animation: cardAppear 800ms;
 	animation-fill-mode: both;
 	&--delay1 {
 		animation-delay: 400ms;
@@ -70,10 +70,10 @@
 .container__title {
 	padding: 10px 1em;
 	font-size: 1em;
-	color: darken($colour-grey-middle, 40);
+	color: darken($color-grey-middle, 40);
 	text-transform: uppercase;
 	& > span {
-		border-bottom: solid 2px $colour-tertiary;
+		border-bottom: solid 2px $color-tertiary;
 	}
 }
 
@@ -89,8 +89,8 @@
 	max-width: calc(100% - 2rem);
 	width: 350px;
 	height: 70px;
-	background-color: $colour-white;
-	box-shadow: 5px 5px 5px $colour-grey-middle;
+	background-color: $color-white;
+	box-shadow: 5px 5px 5px $color-grey-middle;
 	cursor: pointer;
 	border-radius: 1rem;
 	padding: 1rem;
@@ -126,12 +126,13 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #99e2d0;
-		width: 4rem;
-		margin: -1rem -5rem -1rem 1rem;
+		overflow: hidden;
+		width: 0;
+		margin: -1rem -1rem -1rem 1rem;
 		transition: 0.6s;
 		& .fas.fa-check {
-			color: $colour-tertiary;
-			background-color: $colour-white;
+			color: $color-tertiary;
+			background-color: $color-white;
 			@extend %flex-center;
 			overflow: hidden;
 			width: 1.5rem;
@@ -141,7 +142,7 @@
 	}
 }
 .card:hover .card__check {
-	margin: -1rem -1rem -1rem 1rem;
+	width: 4rem;
 }
 .card:hover .fas.fa-check {
 	animation-name: rotate;
@@ -153,12 +154,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 3rem ;
+	padding: 3rem;
 }
 .footer {
 	width: 100%;
-	background-color: $colour-dark;
-	color: $colour-white;
+	background-color: $color-dark;
+	color: $color-white;
 	&__logo {
 		padding: 1em;
 		font-weight: normal;
@@ -169,10 +170,10 @@
 	display: flex;
 	flex-direction: column;
 	padding: 0 1em;
-	color: $colour-white;
+	color: $color-white;
 }
 .list__store a {
-	color: $colour-white;
+	color: $color-white;
 	padding: 1em;
 }
 
